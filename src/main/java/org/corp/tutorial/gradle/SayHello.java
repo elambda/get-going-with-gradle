@@ -4,20 +4,17 @@ import java.time.LocalDate;
 
 public class SayHello {
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		SayHello sayHello = new SayHello();
-		sayHello.showMessage();
-		sayHello.getTimeNow();
+		System.out.println(sayHello.formatMessage("hello world! %s.", "Java"));
+		System.out.println(sayHello.getCurrentDate());
 	}
 
-	public String showMessage() {
-		String format = "hello world! %s hello";
-		System.out.printf(format, LocalDate.now());
-		return format;
+	public String formatMessage(String msg, Object... args) {
+		return String.format(msg, args);
 	}
 
-	public LocalDate getTimeNow() {
-		System.out.printf( "hello world! %s", LocalDate.now());
+	public LocalDate getCurrentDate() {
 		return LocalDate.now();
 	}
 
